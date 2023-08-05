@@ -95,7 +95,8 @@ class BottomBar extends StatelessWidget {
                       ? Color.fromARGB(255, 80, 80, 80)
                       : const Color(0xF2FFFFFF));
 
-              return _BottomBarItemWidget(
+              return Expanded(
+                child: _BottomBarItemWidget(
                 index: index,
                 key: items.elementAt(index).key,
                 isSelected: index == selectedIndex,
@@ -114,6 +115,7 @@ class BottomBar extends StatelessWidget {
                 inactiveIcon: items.elementAt(index).inactiveIcon,
                 title: items.elementAt(index).title,
                 onTap: () => onTap(index),
+              )
               );
             },
           ),
